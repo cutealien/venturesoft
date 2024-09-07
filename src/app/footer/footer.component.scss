@@ -1,0 +1,17 @@
+footer {
+  padding: 4rem;
+  background-color: rgb(243, 241, 241);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  position: relative;
+  p {
+    font-size: .8rem;
+  }
+  .language {
+    position: absolute;
+    top: 5%;
+    right: 5%;
+  }
+}

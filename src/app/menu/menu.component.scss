@@ -1,0 +1,23 @@
+button {
+  padding: .5rem 1.6rem;
+  border-radius: 1.6rem;
+  background-color: #f1f1f1;
+  border: none;
+  transition: all 0.2s ease-in-out;
+  &:not(.active):hover {
+    color: #fff;
+    background-color: var(--mdc-linear-progress-active-indicator-color);
+  }
+}
+
+.btn-box {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+  align-items: center;
+  justify-content: center;
+}
+.active  {
+  background-color: #000;
+  color: #fff;
+}

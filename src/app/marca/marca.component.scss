@@ -1,0 +1,64 @@
+@import "../../variables";
+
+.brands_list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  .card {
+    flex-direction: row;
+    flex-basis: auto;
+    width: auto;
+    height: 125px;
+    &_img {
+      height: 125px;
+      width: 125px;
+      margin-bottom: 0;
+    }
+    &_coupon {
+      position: unset;
+      transform: unset;
+      width: 17ch;
+    }
+    &_description {
+      font-size: 1rem;
+    }
+    &_btns {
+      margin-left: auto;
+      display: flex;
+      align-items: center;
+    }
+  }
+}
+
+.marca_menu {
+  display: flex;
+  justify-content: space-between;
+  @media (max-width: $sm) {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.marca_btns {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+
+.icon {
+  border: 1px solid transparent;
+  &_active {
+    background-color: var(--mdc-linear-progress-active-indicator-color);
+    color: #fff;
+  }
+}
+
+.btn_more {
+  background-color: #fff;
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  font-weight: bold;
+  gap: 4px;
+}

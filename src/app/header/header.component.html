@@ -1,0 +1,58 @@
+<nav>
+  <button mat-stroked-button extended (click)="openModal()" i18n>
+    LOG IN
+    <mat-icon iconPositionEnd>chevron_right</mat-icon>
+  </button>
+  <button mat-flat-button i18n>
+    LINK YOUR CARD
+    <mat-icon iconPositionEnd>chevron_right</mat-icon>
+  </button>
+</nav>
+
+@if (modalOpen()) {
+<div class="modal" appearance="outlined">
+  <div class="modal-backdrop" (click)="closeModal()"></div>
+  <mat-card>
+    <h3 i18n>Welcome</h3>
+    <h4 i18n>Introduce your information to log in.</h4>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <mat-form-field appearance="outline">
+        <mat-label>EMAIL</mat-label>
+        <input
+          matInput
+          placeholder="Email"
+          type="email"
+          formControlName="email"
+        />
+        @if(emailIsInvalid){
+        <mat-error i18n>Invalid email.</mat-error>
+        }
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>PASSWORD</mat-label>
+        <input
+          matInput
+          placeholder="Password"
+          type="password"
+          formControlName="password"
+        />
+        @if(passwordIsInvalid){
+        <mat-error i18n>Invalid password. It should be at least 6 characters long.</mat-error
+        >
+        }
+      </mat-form-field>
+
+      <button mat-flat-button [disabled]="loginForm.invalid" type="submit" i18n>
+        LOG IN
+      </button>
+      <button mat-flat-button (click)="closeModal()" type="button" i18n>
+        Cancel
+      </button>
+    </form>
+
+    <p class="txt-center" i18n>Don't have an account? <a class="link">Register here</a></p>
+
+  </mat-card>
+</div>
+}

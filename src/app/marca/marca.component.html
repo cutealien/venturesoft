@@ -1,0 +1,53 @@
+<div class="container">
+  <div class="marca_menu">
+    <p i18n>Featured Instant Coupons ({{ totalBrands() }})</p>
+    <div class="marca_btns">
+      <button class="btn_marca icon" [class.icon_active]="activeView() === 'list'" (click)="changeView('list')">
+        <mat-icon>list</mat-icon>
+      </button>
+      <button class="btn_marca icon" [class.icon_active]="activeView() === 'gallery'" (click)="changeView('gallery')">
+        <mat-icon>grid_view</mat-icon>
+      </button>
+      <button class="btn_marca outline"  [matMenuTriggerFor]="menu">
+        <span i18n>SORT BY</span> <mat-icon>keyboard_arrow_down</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item (click)="sortBy('nameA')" i18n>Name <mat-icon>arrow_upward</mat-icon></button>
+        <button mat-menu-item (click)="sortBy('nameD')" i18n>Name <mat-icon>arrow_downward</mat-icon></button>
+        <button mat-menu-item (click)="sortBy('descriptionA')" i18n>Description <mat-icon>arrow_upward</mat-icon></button>
+        <button mat-menu-item (click)="sortBy('descriptionD')" i18n>Description <mat-icon>arrow_downward</mat-icon></button>
+      </mat-menu>
+    </div>
+  </div>
+  <div class="mt-md" [class.brands_gallery]="activeView() === 'gallery'" [class.brands_list]="activeView() === 'list'">
+    @for (brand of brands(); track $index) {
+      <div class="card">
+        <div class="card_img">
+          <img [src]="brand.imagen" [alt]="brand.nombreMarca">
+        </div>
+        <div class="card_content">
+          <div class="card_coupon"><mat-icon>credit_card</mat-icon> Instant Coupon</div>
+          <p class="card_marca">{{ brand.nombreMarca }}</p>
+          <p class="card_description">{{ brand['descripción'] }}  </p>
+        </div>
+        <div class="card_btns">
+          <button mat-button i18n>
+            Get coupon
+            <mat-icon iconPositionEnd>arrow_forward</mat-icon>
+          </button>
+        </div>
+      </div>
+    }
+    @if (totalBrands() === 0) {
+      <p i18n>Something went wrong loading brands. Try again later.</p>
+    }
+  </div>
+  @if(!showAll()) {
+    <div class="mt-md txt-center">
+      <button class="btn_more" (click)="showAllBrands()" i18n>
+        MORE INSTANT COUPONS
+        <mat-icon iconPositionEnd>arrow_forward</mat-icon>
+      </button>
+    </div>
+  }
+</div>

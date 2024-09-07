@@ -1,0 +1,12 @@
+@import '../../variables';
+.gradient {
+  padding: 8rem;
+  background-image: linear-gradient(to bottom, var(--mdc-linear-progress-active-indicator-color), #fff);
+  @media (max-width: $sm) {
+    padding: 2rem;
+  }
+}
+
+h2 {
+  color: #fff;
+}

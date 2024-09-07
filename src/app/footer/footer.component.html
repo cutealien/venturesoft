@@ -1,0 +1,15 @@
+<footer>
+  <div>Lorem ipsum</div>
+  <div>Lorem ipsum</div>
+  <div i18n>Privacy policy</div>
+  <div>Lorem ipsum</div>
+  <div class="language">
+    <button class="btn_marca"  [matMenuTriggerFor]="menu" i18n>
+      <mat-icon mat>translate</mat-icon> Language <mat-icon>keyboard_arrow_down</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <a mat-menu-item i18n href="/es-MX">Spanish</a>
+      <a mat-menu-item i18n href="/en-US">English</a>
+    </mat-menu>
+  </div>
+</footer>

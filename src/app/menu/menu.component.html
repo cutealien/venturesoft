@@ -1,0 +1,15 @@
+<div class="container mt-md">
+  <h2 class="txt-center" i18n>Exlore Instant Coupons</h2>
+  <div class="btn-box">
+    @for (btn of categoryButtons(); track $index) {
+      <button [class.active]="$index === activeButton()" (click)="lista_marcas($index, btn.idMenu)">{{ btn['descripción'] }}</button>
+    }
+    @if (loading()) {
+      <mat-spinner></mat-spinner>
+    }
+    @if (error()) {
+      <p>{{ error() }}</p>
+
+    }
+  </div>
+</div>

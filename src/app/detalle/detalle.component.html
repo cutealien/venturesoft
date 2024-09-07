@@ -1,0 +1,30 @@
+<div class="gradient">
+  <h2 class="txt-center" i18n>Unlock the fullpower of</h2>
+
+  <div class="mt-md brands_gallery">
+    @for (brand of brands(); track $index) {
+      <div class="card card_white">
+        <div class="card_img">
+          <img [src]="brand.imagen" [alt]="brand.nombreMarca">
+        </div>
+        <div class="card_content">
+          <div class="card_coupon card_coupon_blue" i18n><mat-icon>credit_card</mat-icon> Cashback</div>
+          <p class="card_marca">{{ brand.nombreMarca }}</p>
+          <p class="card_description">{{ brand['descripción'] }}  </p>
+        </div>
+        <div class="card_logo">
+          <img [src]="brand.imagen" [alt]="brand.nombreMarca">
+        </div>
+      </div>
+    }
+  </div>
+  <div class="txt-center mt-md">
+    <button mat-flat-button i18n>
+      LINK YOUR CARD
+      <mat-icon iconPositionEnd>chevron_right</mat-icon>
+    </button>
+  </div>
+</div>
+@if(error()) {
+  <p>{{ error() }}</p>
+}

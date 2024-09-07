@@ -1,0 +1,28 @@
+<div class="container mt-md">
+  <h2 i18n>
+    Link your business card to <span class="t-b">unlock cashback</span> offers
+  </h2>
+  <table mat-table [dataSource]="data">
+    <ng-container matColumnDef="benefit">
+      <th mat-header-cell *matHeaderCellDef></th>
+      <td mat-cell *matCellDef="let element">{{element.benefit}}</td>
+    </ng-container>
+    <ng-container matColumnDef="noLink">
+      <th mat-header-cell *matHeaderCellDef i18n>No card Baking required</th>
+      <td mat-cell *matCellDef="let element" class="txt-center"><mat-icon class="icon-green">{{element.noLink}}</mat-icon></td>
+    </ng-container>
+    <ng-container matColumnDef="link">
+      <th mat-header-cell *matHeaderCellDef i18n>Link your card to get</th>
+      <td mat-cell *matCellDef="let element" class="txt-center"><mat-icon class="icon-green">{{element.link}}</mat-icon> </td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="tableColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: tableColumns;"></tr>
+  </table>
+</div>
+
+<div class="txt-center">
+  <button mat-flat-button i18n>
+    LINK YOUR CARD
+    <mat-icon iconPositionEnd>chevron_right</mat-icon>
+  </button>
+</div>
