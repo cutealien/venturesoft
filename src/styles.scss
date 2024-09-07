@@ -75,7 +75,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .brands_gallery {
   display: flex;
   align-items: stretch;
-  justify-content: left;
+  justify-content: center;
   flex-wrap: wrap;
   gap: 16px;
   @media (max-width: $lg) {
